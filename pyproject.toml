@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "PaperTrail API"
+version = "0.1.0"
+description = """PaperTrail is a free and open-source tool designed to help you craft professional,
+                customizable resumes with ease. Whether you're a software developer, designer, data scientist,
+                or anything in between, PaperTrail simplifies the process of generating clean, consistent, and beautifully
+                formatted resumes—without the repetitive formatting struggles."""
+authors = ["Luis Carlos Quyesada - luiscarlosquesada@gmail.com"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "3.13"
+pydantic = "^2.11.3"
+jinja2 = "^3.1.6"
+fastapi = "0.115.12"
+uvicorn = "0.34.0"
+
