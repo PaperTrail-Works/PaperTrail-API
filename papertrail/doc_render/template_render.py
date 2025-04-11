@@ -1,5 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
 
+class TemplateRenderer(BaseModel):
+    template_file = 
 # -- Config --
 TEMPLATE_DIR = "templates"  # Folder where template.txt is stored
 TEMPLATE_FILE = "template.txt"  # Name of the template file
