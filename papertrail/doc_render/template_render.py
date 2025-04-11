@@ -1,17 +1,17 @@
+from typing import Any
 from jinja2 import Environment, FileSystemLoader
+from pydantic.v1 import BaseModel, Field
+
 
 class TemplateRenderer(BaseModel):
-    template_file = 
-# -- Config --
-TEMPLATE_DIR = "templates"  # Folder where template.txt is stored
-TEMPLATE_FILE = "template.txt"  # Name of the template file
+    template_dir: str = Field(title="", description="")
 
-# -- Jinja Environment Setup --
-env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
-template = env.get_template(TEMPLATE_FILE)
+    def __init__(self):
+        super().__init__()
 
-# -- Render the template with a name variable --
-rendered_text = template.render(name="World")
+        env = Environment(loader=FileSystemLoader(self.template_dir))
+        self.template = env.get_template(self.template_file)
 
-# -- Print the rendered text (you can save it or print) --
-print(rendered_text)
+    def render(self, template_file: str, data: dict[str: Any]) -> str:
+        rendered_text = self.template.render(name="World")
+        return rendered_text
